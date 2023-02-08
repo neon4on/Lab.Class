@@ -4,39 +4,49 @@
 using namespace std;
 
 class Complex {
-	double a;
-	double b;
+	int real1;
+	int img1;
+	int real2;
+	int img2;
+	int real3;
+	int img3;
 	
 	void Addition() {
-		a += b;
-		cout << "Addition a + b = " << a;
+		real3 = real1 + real2;
+		img3 = img1 + img2;
+		cout << "Addition a + b = " << real3 << "+" << img3 << "i";
 		cout << endl;
 	}
 	void Subtraction() {
-		a -= b;
-		cout << "Subtraction a - b = " << a;
+		real3 -= img1;
+		cout << "Subtraction a - b = " << real3;
 		cout << endl;
 	}
 	void Multiplication() {
-		a *= b;
-		cout << "Multiplication a * b = " << a;
+		real3 *= img1;
+		cout << "Multiplication a * b = " << real3;
 		cout << endl;
 	}
 public:
-	Complex(double a1, double b1) 
+	Complex(int a1, int b1, int a2, int b2)
 	{ 
-		a = a1; 
-		b = b1; 
+		real1 = a1;
+		img1 = b1;
+		real2 = a2;
+		img2 = b2;
 	}
 	~Complex() {
 		cout << endl << "See you soon" << endl;
 	}
-	void ComplexSet(double aa, double bb) {
-		a = aa;
-		b = bb;
+	void ComplexSet(int a1, int b1, int a2, int b2) {
+		real1 = a1;
+		img1 = b1;
+		real2 = a2;
+		img2 = b2;
 	}
 	void ComplexGet() {
-		cout << endl << "\t" << a << " " << b;
+		cout << endl << "\t" << real1 << "+" << img1 << "i" <<
+			endl  << "\t" << real2 << "+" << img2 << "i";
 	}
 	void Sum() {
 		Addition();
@@ -77,9 +87,9 @@ int main(void)
 {
 	setlocale(LC_ALL, "Russian");
 
-	double aa, bb;
+	int a1, b1, a2, b2;
 
-	Complex c(10,5);
+	Complex c(10,5,20,10);
 
 	int select;
 	do
@@ -105,11 +115,18 @@ int main(void)
 		}
 		case 4:
 		{
-			cout << "Введите первое число: " << endl;
-			cin >> aa;
-			cout << "Введите второе число: " << endl;
-			cin >> bb;
-			c.ComplexSet(aa,bb);
+			cout << "Введите значения 1-го комплексного числа a & bi: " << endl;
+			cout << "Введите действительную часть: " << endl;
+			cin >> a1;
+			cout << "Введите мнимую часть: " << endl;
+			cin >> b1;
+			cout << endl;
+			cout << "Введите значения 2-го комплексного числа a & bi: " << endl;
+			cout << "Введите действительную часть: " << endl;
+			cin >> a2;
+			cout << "Введите мнимую часть: " << endl;
+			cin >> b2;
+			c.ComplexSet(a1,b1,a2,b2);
 			break;
 		}
 		case 5:
