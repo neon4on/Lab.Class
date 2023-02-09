@@ -18,13 +18,15 @@ class Complex {
 		cout << endl;
 	}
 	void Subtraction() {
-		real3 -= img1;
-		cout << "Subtraction a - b = " << real3;
+		real3 = real1 - real2;
+		img3 = img1 - img2;
+		cout << "Subtraction a - b = " << real3 << "+" << img3 << "i";
 		cout << endl;
 	}
 	void Multiplication() {
-		real3 *= img1;
-		cout << "Multiplication a * b = " << real3;
+		real3 = real1 * real2;
+		img3 = img1 * img2;
+		cout << "Multiplication a * b = " << real3 << "+" << img3 << "i";
 		cout << endl;
 	}
 public:
@@ -45,8 +47,8 @@ public:
 		img2 = b2;
 	}
 	void ComplexGet() {
-		cout << endl << "\t" << real1 << "+" << img1 << "i" <<
-			endl  << "\t" << real2 << "+" << img2 << "i";
+		cout << endl << "Число #1:" <<"\t" << real1 << "+" << img1 << "i" <<
+			endl  << "Число #2:" << "\t" << real2 << "+" << img2 << "i";
 	}
 	void Sum() {
 		Addition();
@@ -89,7 +91,7 @@ int main(void)
 
 	int a1, b1, a2, b2;
 
-	Complex c(10,5,20,10);
+	Complex c(20,10,10,5);
 
 	int select;
 	do
